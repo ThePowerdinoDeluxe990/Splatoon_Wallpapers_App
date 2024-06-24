@@ -41,12 +41,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import com.example.compose.SplatoonWallpapersTheme
-import com.powerdino.splatoonwallpapers.R
 import com.powerdino.splatoonwallpapers.ui.navigation.NavigationComposableScreens
 import com.powerdino.splatoonwallpapers.ui.viewmodel.DownloadViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
