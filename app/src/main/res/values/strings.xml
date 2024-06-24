@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Splatoon Wallpapers</string>
+
+    <string name="splatoon1">Final Fest</string>
+    <string name="splatoon1_url">https://raw.githubusercontent.com/ThePowerdinoDeluxe990/ThePowerdinoDeluxe990/main/splatoon1.jpg</string>
+
+    <string name="splatoon2">Icons Splatoon 2</string>
+    <string name="splatoon2_url">https://raw.githubusercontent.com/ThePowerdinoDeluxe990/ThePowerdinoDeluxe990/main/splatoon2.jpg</string>
+
+    <string name="splatoon3">Icons Splatoon 3</string>
+    <string name="splatoon3_url">https://raw.githubusercontent.com/ThePowerdinoDeluxe990/ThePowerdinoDeluxe990/main/splatoon3.png</string>
+
+    <string name="splatoon4">Li\'l Judd</string>
+    <string name="splatoon4_url">https://raw.githubusercontent.com/ThePowerdinoDeluxe990/ThePowerdinoDeluxe990/main/splatoon4.jpg</string>
+
+    <string name="splatoon5">Story Mode Splatoon 3</string>
+    <string name="splatoon5_url">https://raw.githubusercontent.com/ThePowerdinoDeluxe990/ThePowerdinoDeluxe990/main/splatoon5.jpg</string>
+
+    <string name="splatoon6">Blue Inkling</string>
+    <string name="splatoon6_url">https://raw.githubusercontent.com/ThePowerdinoDeluxe990/ThePowerdinoDeluxe990/main/splatoon6.jpg</string>
+
+    <string name="splatoon7">Octo Expansion Icons</string>
+    <string name="splatoon7_url">https://raw.githubusercontent.com/ThePowerdinoDeluxe990/ThePowerdinoDeluxe990/main/splatoon7.jpg</string>
+
+    <string name="splatoon8">Story mode icons</string>
+    <string name="splatoon8_url">https://raw.githubusercontent.com/ThePowerdinoDeluxe990/ThePowerdinoDeluxe990/main/splatoon8.jpg</string>
+
+    <string name="splatoon9">Story Mode Splatoon 1</string>
+    <string name="splatoon9_url">https://raw.githubusercontent.com/ThePowerdinoDeluxe990/ThePowerdinoDeluxe990/main/splatoon9.jpg</string>
+
+    <string name="splatoon10">Elite Weapons Splatoon 2</string>
+    <string name="splatoon10_url">https://raw.githubusercontent.com/ThePowerdinoDeluxe990/ThePowerdinoDeluxe990/main/splatoon10.jpg</string>
+
+    <string name="splatoon11">Elite Dualies</string>
+    <string name="splatoon11_url">https://raw.githubusercontent.com/ThePowerdinoDeluxe990/ThePowerdinoDeluxe990/main/splatoon11.jpg</string>
+
+    <string name="splatoon12">Black Icons</string>
+    <string name="splatoon12_url">https://raw.githubusercontent.com/ThePowerdinoDeluxe990/ThePowerdinoDeluxe990/main/splatoon12.jpg</string>
+
+</resources>
