@@ -1,40 +1,43 @@
 <resources>
     <string name="app_name">Splatoon Wallpapers</string>
+    <string name="media_store_failed"> App to Media store failed </string>
+    <string name="error_saving_image">Error saving image</string>
+    <string name="saving_image">Saving image</string>
 
     <string name="splatoon1">Final Fest</string>
-    <string name="splatoon1_url">https://raw.githubusercontent.com/ThePowerdinoDeluxe990/ThePowerdinoDeluxe990/main/splatoon1.jpg</string>
+    <string name="splatoon1_url">https://i.redd.it/64orjti903b31.jpg</string>
 
     <string name="splatoon2">Icons Splatoon 2</string>
-    <string name="splatoon2_url">https://raw.githubusercontent.com/ThePowerdinoDeluxe990/ThePowerdinoDeluxe990/main/splatoon2.jpg</string>
+    <string name="splatoon2_url">https://img2.wallspic.com/previews/9/0/3/7/5/157309/157309-2_expansion_de_splatoon_ocho-splatoon-nintendo_interruptor-nintendo-juego_de_nintendo-x750.jpg</string>
 
     <string name="splatoon3">Icons Splatoon 3</string>
-    <string name="splatoon3_url">https://raw.githubusercontent.com/ThePowerdinoDeluxe990/ThePowerdinoDeluxe990/main/splatoon3.png</string>
+    <string name="splatoon3_url">https://preview.redd.it/phone-wallpapers-v0-yw14b1dmff3a1.png?width=1080&amp;crop=smart&amp;auto=webp&amp;s=91006a99247be45469d528957640c83054490e57</string>
 
     <string name="splatoon4">Li\'l Judd</string>
-    <string name="splatoon4_url">https://raw.githubusercontent.com/ThePowerdinoDeluxe990/ThePowerdinoDeluxe990/main/splatoon4.jpg</string>
+    <string name="splatoon4_url">https://pm1.aminoapps.com/6510/d120b9fae6e9d85476e53cb9555620b88ba4cd4e_hq.jpg</string>
 
     <string name="splatoon5">Story Mode Splatoon 3</string>
-    <string name="splatoon5_url">https://raw.githubusercontent.com/ThePowerdinoDeluxe990/ThePowerdinoDeluxe990/main/splatoon5.jpg</string>
+    <string name="splatoon5_url">https://preview.redd.it/hfopilv2nqp91.png?width=1080&amp;crop=smart&amp;auto=webp&amp;s=ba7b8206e87c40b6551d48a2ecd589b524119c15</string>
 
     <string name="splatoon6">Blue Inkling</string>
-    <string name="splatoon6_url">https://raw.githubusercontent.com/ThePowerdinoDeluxe990/ThePowerdinoDeluxe990/main/splatoon6.jpg</string>
+    <string name="splatoon6_url">https://w0.peakpx.com/wallpaper/391/77/HD-wallpaper-splatoon-blue-ink-nintendo-splash-splat-splatoon-2-toon.jpg</string>
 
     <string name="splatoon7">Octo Expansion Icons</string>
-    <string name="splatoon7_url">https://raw.githubusercontent.com/ThePowerdinoDeluxe990/ThePowerdinoDeluxe990/main/splatoon7.jpg</string>
+    <string name="splatoon7_url">https://e1.pxfuel.com/desktop-wallpaper/185/80/desktop-wallpaper-igor-%E2%98%82%EF%B8%8F-on-twitter-splatoon-squid.jpg</string>
 
     <string name="splatoon8">Story mode icons</string>
-    <string name="splatoon8_url">https://raw.githubusercontent.com/ThePowerdinoDeluxe990/ThePowerdinoDeluxe990/main/splatoon8.jpg</string>
+    <string name="splatoon8_url">https://64.media.tumblr.com/d123c0c64b3b1dd41b555537eb9b1f88/tumblr_o9y837OfQc1u1ymyao1_1280.jpg</string>
 
     <string name="splatoon9">Story Mode Splatoon 1</string>
-    <string name="splatoon9_url">https://raw.githubusercontent.com/ThePowerdinoDeluxe990/ThePowerdinoDeluxe990/main/splatoon9.jpg</string>
+    <string name="splatoon9_url">https://e0.pxfuel.com/wallpapers/302/864/desktop-wallpaper-years-of-splatoon-an-album-of-phone-1440-x-2560-px-album-on-imgur-splatoon-3.jpg</string>
 
     <string name="splatoon10">Elite Weapons Splatoon 2</string>
-    <string name="splatoon10_url">https://raw.githubusercontent.com/ThePowerdinoDeluxe990/ThePowerdinoDeluxe990/main/splatoon10.jpg</string>
+    <string name="splatoon10_url">https://e1.pxfuel.com/desktop-wallpaper/928/808/desktop-wallpaper-splatoon2-weapons-splatoon-2-phone.jpg</string>
 
     <string name="splatoon11">Elite Dualies</string>
-    <string name="splatoon11_url">https://raw.githubusercontent.com/ThePowerdinoDeluxe990/ThePowerdinoDeluxe990/main/splatoon11.jpg</string>
+    <string name="splatoon11_url">https://e1.pxfuel.com/desktop-wallpaper/36/820/desktop-wallpaper-splatoon-phone-splatoon-2-phone.jpg</string>
 
     <string name="splatoon12">Black Icons</string>
-    <string name="splatoon12_url">https://raw.githubusercontent.com/ThePowerdinoDeluxe990/ThePowerdinoDeluxe990/main/splatoon12.jpg</string>
+    <string name="splatoon12_url">https://i.pinimg.com/736x/19/ac/e5/19ace5bec239f6fb42bb63d5143c91f1.jpg</string>
 
 </resources>

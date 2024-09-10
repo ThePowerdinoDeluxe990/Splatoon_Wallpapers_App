@@ -5,23 +5,17 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.KeyboardArrowDown
-import androidx.compose.material3.Button
+import androidx.compose.material.icons.filled.Download
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExtendedFloatingActionButton
-import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -47,6 +41,7 @@ import com.powerdino.splatoonwallpapers.ui.navigation.NavigationComposableScreen
 import com.powerdino.splatoonwallpapers.ui.viewmodel.DownloadViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
+//TODO JPG IMAGES TO JEPG
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DownloadScreen(
@@ -54,7 +49,6 @@ fun DownloadScreen(
         viewModel: DownloadViewModel?,
     ){
 
-    val uriHandler = LocalUriHandler.current
     val localContext = LocalContext.current
     val viewVar by viewModel!!.downloadState.collectAsStateWithLifecycle()
 
@@ -66,7 +60,7 @@ fun DownloadScreen(
                 ),
                 title = {
                     Text(
-                        text = stringResource(id = viewVar.wallpaperName),
+                        text =  stringResource( viewVar.wallpaperName),
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.onPrimary
                     )
@@ -86,9 +80,8 @@ fun DownloadScreen(
 
             ExtendedFloatingActionButton(
                 onClick = {
-                    viewModel?.savePhotoBrowser(
-                        viewVar.wallpaperUrl,
-                        uriHandler = uriHandler,
+                    viewModel?.savePhotoOnDevice(
+                        urlPhoto = viewVar.wallpaperUrl,
                         context = localContext
                     )
 
@@ -99,7 +92,7 @@ fun DownloadScreen(
                     verticalAlignment = Alignment.CenterVertically
                 ){
                     Icon(
-                        Icons.Filled.KeyboardArrowDown,
+                        Icons.Default.Download,
                         "Download Button"
                     )
 
@@ -123,7 +116,7 @@ fun DownloadScreen(
     ) {
         Image(
             painter = painterResource(viewVar.wallpaperImageResource), 
-            contentDescription = stringResource(viewVar.wallpaperName),
+            contentDescription = stringResource( viewVar.wallpaperName),
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .clip(RoundedCornerShape(16.dp)),

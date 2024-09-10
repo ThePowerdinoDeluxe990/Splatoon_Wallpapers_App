@@ -5,6 +5,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.ui.platform.UriHandler
 import androidx.lifecycle.ViewModel
+import com.powerdino.splatoonwallpapers.downloader.AndroidDownloader
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -14,24 +15,27 @@ class DownloadViewModel : ViewModel(){
     private val _DownloadState = MutableStateFlow(ViewModelData())
     val downloadState:StateFlow<ViewModelData> = _DownloadState.asStateFlow()
 
-    fun savePhotoBrowser(
-        @StringRes urlPhoto:Int,
-        uriHandler: UriHandler,
+    fun savePhotoOnDevice(
+        urlPhoto:String,
         context: Context
     ){
-        uriHandler.openUri(context.resources.getString(urlPhoto))
+        val dowloader = AndroidDownloader(context)
+        dowloader.downloadFile(
+            urlPhoto,
+            context.getString(_DownloadState.value.wallpaperName)
+        )
     }
 
     fun getDownloadState(
         @DrawableRes wallpaperResource:Int,
         @StringRes wallpaperName:Int,
-        @StringRes wallpaperUrl:Int
+        wallpaperUrl:String
     ){
         _DownloadState.update { currentState ->
             currentState.copy(
-                wallpaperResource,
-                wallpaperName,
-                wallpaperUrl
+                wallpaperImageResource = wallpaperResource,
+                wallpaperName = wallpaperName,
+                wallpaperUrl = wallpaperUrl
             )
         }
     }
