@@ -29,7 +29,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -41,7 +40,6 @@ import com.powerdino.splatoonwallpapers.ui.navigation.NavigationComposableScreen
 import com.powerdino.splatoonwallpapers.ui.viewmodel.DownloadViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
-//TODO JPG IMAGES TO JEPG
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DownloadScreen(

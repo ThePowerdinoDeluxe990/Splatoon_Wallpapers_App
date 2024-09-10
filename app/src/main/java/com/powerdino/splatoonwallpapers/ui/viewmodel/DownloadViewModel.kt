@@ -3,7 +3,6 @@ package com.powerdino.splatoonwallpapers.ui.viewmodel
 import android.content.Context
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
-import androidx.compose.ui.platform.UriHandler
 import androidx.lifecycle.ViewModel
 import com.powerdino.splatoonwallpapers.downloader.AndroidDownloader
 import kotlinx.coroutines.flow.MutableStateFlow
