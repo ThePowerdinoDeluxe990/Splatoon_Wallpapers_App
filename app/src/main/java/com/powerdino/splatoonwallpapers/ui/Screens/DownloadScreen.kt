@@ -1,6 +1,9 @@
 package com.powerdino.splatoonwallpapers.ui.Screens
 
 import android.content.res.Configuration
+import android.graphics.BitmapFactory
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,10 +23,14 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -39,8 +46,11 @@ import com.example.compose.SplatoonWallpapersTheme
 import com.powerdino.splatoonwallpapers.ui.navigation.NavigationComposableScreens
 import com.powerdino.splatoonwallpapers.ui.viewmodel.DownloadViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.powerdino.splatoonwallpapers.R
+import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
+@RequiresApi(Build.VERSION_CODES.Q)
 @Composable
 fun DownloadScreen(
         navController: NavController?,
@@ -49,8 +59,11 @@ fun DownloadScreen(
 
     val localContext = LocalContext.current
     val viewVar by viewModel!!.downloadState.collectAsStateWithLifecycle()
+    val scope = rememberCoroutineScope()
+    val snackbarHostState = remember { SnackbarHostState() }
 
     Scaffold (
+
         topBar ={
             CenterAlignedTopAppBar(
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -74,17 +87,25 @@ fun DownloadScreen(
                 },
             )
         },
+        snackbarHost = {
+            SnackbarHost(hostState = snackbarHostState)
+        },
         floatingActionButton = {
 
             ExtendedFloatingActionButton(
                 onClick = {
-                    viewModel?.savePhotoOnDevice(
-                        urlPhoto = viewVar.wallpaperUrl,
-                        context = localContext
-                    )
-
+                    val bitmapConvertor = BitmapFactory.decodeResource(localContext.resources, viewVar.wallpaperImageResource)
+                    val imageName = localContext.getString(viewVar.wallpaperName)
+                    val downloadMessage = localContext.getString(R.string.download_finish)
+                    scope.launch {
+                        viewModel.saveImage(
+                            bitmap = bitmapConvertor,
+                            context = localContext,
+                            imageName =  imageName
+                        )
+                        snackbarHostState.showSnackbar(message = "✅ " +downloadMessage)
+                    }
                 },
-
             ) {
                 Row (
                     verticalAlignment = Alignment.CenterVertically
@@ -124,6 +145,7 @@ fun DownloadScreen(
     }
 }
 
+@RequiresApi(Build.VERSION_CODES.Q)
 @Preview(
     uiMode = Configuration.UI_MODE_NIGHT_NO,
     name = "Light",

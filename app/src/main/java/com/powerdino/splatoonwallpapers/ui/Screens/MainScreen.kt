@@ -37,6 +37,7 @@ import com.powerdino.splatoonwallpapers.ui.viewmodel.DownloadViewModel
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.debounce
+import androidx.core.content.edit
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -110,9 +111,9 @@ fun MainScreenComposable(
         }
             .debounce(500L)
             .collectLatest { index ->
-                prefs.edit()
-                    .putInt("scroll_position",index)
-                    .apply()
+                prefs.edit {
+                    putInt("scroll_position", index)
+                }
             }
     }
 
@@ -129,10 +130,8 @@ fun MainScreenComposable(
                 ItemCard(
                     onClickButton = {
                         viewModel?.getDownloadState(
-
                             wallpaperResource = wallpaper.wallpaperImageResource,
-                            wallpaperName = wallpaper.wallpaperName,
-                            wallpaperUrl =  context.getString( wallpaper.wallpaperUrl),
+                            wallpaperName = wallpaper.wallpaperName
                         )
                         navControler?.navigate(NavigationComposableScreens.downloadScreen.route)
                     },
