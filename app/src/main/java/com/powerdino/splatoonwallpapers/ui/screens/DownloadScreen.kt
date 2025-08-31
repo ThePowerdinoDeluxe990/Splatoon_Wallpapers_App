@@ -1,4 +1,4 @@
-package com.powerdino.splatoonwallpapers.ui.Screens
+package com.powerdino.splatoonwallpapers.ui.screens
 
 import android.content.res.Configuration
 import android.graphics.BitmapFactory
