@@ -15,11 +15,20 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
+
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import com.example.compose.SplatoonWallpapersTheme
+import com.powerdino.splatoonwallpapers.R
+import com.powerdino.splatoonwallpapers.ui.composable.DropdownTypeSelectorMenu
 import com.powerdino.splatoonwallpapers.ui.viewmodel.DownloadViewModel
 
 
@@ -30,6 +39,10 @@ fun MainScreen(
     viewModel: DownloadViewModel?,
     windowSize: WindowWidthSizeClass?
 ){
+    val context = LocalContext.current
+    var expanded by remember { mutableStateOf(false) }
+    var typeOfWallpaper by remember { mutableStateOf(context.getString(R.string.type0)) }
+
     Scaffold (
         topBar = {
             CenterAlignedTopAppBar(
@@ -44,11 +57,22 @@ fun MainScreen(
                     )
                 },
                 actions = {
-                    IconButton(onClick = {  }) {
+                    IconButton(
+                        modifier = Modifier.testTag("DropDownButton"),
+                        onClick = {
+                            expanded = !expanded
+                        }
+                    ) {
                         Icon(
                             imageVector = Icons.Filled.Menu,
                             contentDescription = "Localized description"
                         )
+                    }
+                    DropdownTypeSelectorMenu(
+                        changeTypeOfWallpaper = {newTypeOfWallpaper -> typeOfWallpaper = newTypeOfWallpaper},
+                        expanded = expanded
+                    ) {
+                        expanded = false
                     }
                 },
             )
@@ -60,7 +84,8 @@ fun MainScreen(
             MainScreenSecondary(
                 navyController,
                 viewModel,
-                windowSize
+                windowSize,
+                typeOfWallpaper = typeOfWallpaper
             )
         }
 

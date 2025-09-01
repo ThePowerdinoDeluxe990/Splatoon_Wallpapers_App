@@ -18,9 +18,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.core.content.edit
 import androidx.navigation.NavController
+import com.powerdino.splatoonwallpapers.R
 import com.powerdino.splatoonwallpapers.ui.composable.ItemCard
 import com.powerdino.splatoonwallpapers.ui.data.WallpaperList
 import com.powerdino.splatoonwallpapers.ui.navigation.NavigationComposableScreens
@@ -34,7 +36,8 @@ import kotlinx.coroutines.flow.debounce
 fun MainScreenSecondary(
     navControler: NavController?,
     viewModel: DownloadViewModel?,
-    windowSize: WindowWidthSizeClass?
+    windowSize: WindowWidthSizeClass?,
+    typeOfWallpaper:String
 ){
     var screenSizeVar by remember {
         mutableStateOf(0.dp)
@@ -81,19 +84,37 @@ fun MainScreenSecondary(
             verticalItemSpacing = 14.dp
         ) {
             items(WallpaperList.Wallpapers) { wallpaper ->
-                ItemCard(
-                    onClickButton = {
-                        viewModel?.getDownloadState(
-                            wallpaperResource = wallpaper.wallpaperImageResource,
-                            wallpaperName = wallpaper.wallpaperName
-                        )
-                        navControler?.navigate(
-                            NavigationComposableScreens.downloadScreen.route
-                        )
-                    },
-                    wallpaperName = wallpaper.wallpaperName,
-                    wallpaperImage = wallpaper.wallpaperImageResource
-                )
+
+                if(typeOfWallpaper == stringResource(R.string.type0)){
+                    ItemCard(
+                        onClickButton = {
+                            viewModel?.getDownloadState(
+                                wallpaperResource = wallpaper.wallpaperImageResource,
+                                wallpaperName = wallpaper.wallpaperName
+                            )
+                            navControler?.navigate(
+                                NavigationComposableScreens.downloadScreen.route
+                            )
+                        },
+                        wallpaperName = wallpaper.wallpaperName,
+                        wallpaperImage = wallpaper.wallpaperImageResource
+                    )
+                }else if (stringResource(wallpaper.wallpaperType) == typeOfWallpaper){
+                    ItemCard(
+                        onClickButton = {
+                            viewModel?.getDownloadState(
+                                wallpaperResource = wallpaper.wallpaperImageResource,
+                                wallpaperName = wallpaper.wallpaperName
+                            )
+                            navControler?.navigate(
+                                NavigationComposableScreens.downloadScreen.route
+                            )
+                        },
+                        wallpaperName = wallpaper.wallpaperName,
+                        wallpaperImage = wallpaper.wallpaperImageResource
+                    )
+                }
+
             }
         }
     }
